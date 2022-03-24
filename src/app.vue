@@ -1,8 +1,9 @@
 <template>
-    <main class="py-20 px-10 text-center">
-        <NuxtPage />
-        <Footer />
-    </main>
+    <NuxtLayout name="default">
+        <main>
+            <NuxtPage />
+        </main>
+    </NuxtLayout>
 </template>
 
 <style>
