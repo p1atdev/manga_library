@@ -5,7 +5,7 @@ const config = useRuntimeConfig()
 </script>
 
 <template>
-    <p class="font-bold text-4xl md:text-5xl text-center">
+    <p class="font-bold text-4xl sm:text-5xl text-center">
         {{ config.SITE_TITLE }}
     </p>
 </template>

@@ -4,9 +4,9 @@ import { OGPParser } from "../../utils/ogp"
 import { OGP } from "../../types/ogp"
 
 export default async (req: IncomingMessage, res: ServerResponse): Promise<OGP> => {
-    const body = await useBody<{ url: string }>(req)
+    const query = useQuery(req)
 
-    const url = body.url
+    const url = query.url
 
     if (!url) {
         res.statusCode = 400

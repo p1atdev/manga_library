@@ -5,7 +5,7 @@ export default defineNuxtConfig({
         SITE_TITLE: "漫画図書館",
     },
     meta: {
-        title: "Vitesse Nuxt 3",
+        title: "漫画図書館",
     },
     buildModules: ["@vueuse/nuxt", "@unocss/nuxt", "@pinia/nuxt"],
     vueuse: {

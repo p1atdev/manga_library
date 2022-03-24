@@ -1,26 +1,32 @@
 <script lang="ts" setup>
+type Props = {
+    q?: string
+}
+
+const { q } = defineProps<Props>()
+
 const focused = ref(false)
 </script>
 
 <template>
-    <div centerize pt-4 pb-6>
+    <div mt-4 pb-6 max-w="sm:lg md:xl lg:2xl" min-w="80 sm:md md:lg lg:xl">
         <div relative>
             <form action="/search">
                 <div
                     class="w-full text-lg"
-                    w="sm:md md:xl"
                     :rounded="focused ? 't-3xl' : 'full'"
-                    :border="focused ? '' : '1 gray-200 dark:stone-600'"
+                    :border="focused ? '1 transparent' : '1 gray-200 dark:stone-600'"
                     :shadow="focused ? 'md' : ''"
-                    :bg="focused ? 'dark:stone-700' : 'dark:hover:stone-700'"
+                    :bg="focused ? 'dark:zinc-700' : 'dark:hover:slate-700'"
                 >
-                    <div class="flex items-center py-1 pl-5 relative">
+                    <div class="flex items-center py-1 pl-5 w-full relative">
                         <div i-fe-search class="text-gray-400"></div>
 
                         <input
                             class="appearance-none py-2 pl-2 w-full outline-none placeholder-gray-400 bg-transparent"
                             type="search"
                             name="q"
+                            v-model="q"
                             placeholder="タコピーの原罪"
                             autocomplete="off"
                             @focusin="focused = true"
@@ -31,7 +37,7 @@ const focused = ref(false)
                     <div
                         v-if="focused"
                         class="absolute z-10 w-full px-1 rounded-b-3xl border-t shadow"
-                        bg="white dark:stone-700"
+                        bg="white dark:zinc-700"
                         border="gray-200 dark:stone-600 "
                     >
                         <!-- TODO: ここの検索候補部分 -->

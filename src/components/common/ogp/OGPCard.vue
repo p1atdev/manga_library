@@ -9,8 +9,8 @@ type Props = {
 const { url } = defineProps<Props>()
 
 const { data: ogp } = await useFetch(`/api/ogpcard`, {
-    method: "POST",
-    body: {
+    method: "GET",
+    params: {
         url: url,
     },
 })

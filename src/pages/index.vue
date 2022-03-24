@@ -12,7 +12,9 @@ import SearchBox from "../components/common/search/SearchBox.vue"
             <LogoTitle my="2" />
         </div>
 
-        <SearchBox />
+        <div centerize>
+            <SearchBox />
+        </div>
 
         <!-- <OGPLinkCard url="https://shonenjumpplus.com/episode/3269754496827246816" /> -->
     </div>

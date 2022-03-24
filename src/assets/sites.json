@@ -1,0 +1,19 @@
+{
+  "major": [
+    {
+      "url": "https://shonenjumpplus.com",
+      "search_result_class": "search-series-list",
+      "title": "少年ジャンプ+"
+    },
+    {
+      "url": "https://tonarinoyj.jp",
+      "search_result_class": "series-list",
+      "title": "隣のヤングジャンプ"
+    },
+    {
+      "url": "https://www.sunday-webry.com",
+      "search_result_class": "series-list",
+      "title": "サンデーうぇぶり"
+    }
+  ]
+}
