@@ -18,9 +18,11 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.18.8",
+    "@iconify-json/bx": "^1.1.2",
     "@iconify-json/carbon": "^1.1.1",
     "@iconify-json/fe": "^1.1.1",
     "@iconify-json/icomoon-free": "^1.1.1",
+    "@iconify-json/ph": "^1.1.1",
     "@iconify-json/twemoji": "^1.1.1",
     "@pinia/nuxt": "^0.1.8",
     "@unocss/nuxt": "^0.27.6",

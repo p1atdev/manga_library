@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import SearchSuggestions from "./SearchSuggestions.vue"
 type Props = {
     q?: string
 }
@@ -6,10 +7,18 @@ type Props = {
 const { q } = defineProps<Props>()
 
 const focused = ref(false)
+const canFocusout = ref(false)
 </script>
 
 <template>
-    <div mt-4 pb-6 max-w="sm:lg md:xl lg:2xl" min-w="80 sm:md md:lg lg:xl">
+    <div
+        mt-4
+        pb-6
+        max-w="sm:lg md:xl lg:2xl"
+        min-w="80 sm:md md:lg lg:xl"
+        @mouseenter="canFocusout = false"
+        @mouseleave="canFocusout = true"
+    >
         <div relative>
             <form action="/search">
                 <div
@@ -30,22 +39,25 @@ const focused = ref(false)
                             placeholder="タコピーの原罪"
                             autocomplete="off"
                             @focusin="focused = true"
-                            @focusout="focused = false"
+                            @focusout="focused = !canFocusout"
                         />
                     </div>
 
                     <div
-                        v-if="focused"
-                        class="absolute z-10 w-full px-1 rounded-b-3xl border-t shadow"
-                        bg="white dark:zinc-700"
-                        border="gray-200 dark:stone-600 "
+                        @focusin="
+                            () => {
+                                focused = true
+                            }
+                        "
                     >
-                        <!-- TODO: ここの検索候補部分 -->
-                        <div class="h-md">
-                            <NuxtLink to="/">
-                                <div flex><p py-3 pl-11>タコピー</p></div>
-                            </NuxtLink>
-                        </div>
+                        <SearchSuggestions
+                            :show="focused"
+                            @suggest="
+                                (value) => {
+                                    q = value
+                                }
+                            "
+                        />
                     </div>
                 </div>
             </form>
