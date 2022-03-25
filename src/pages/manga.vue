@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import { format } from "date-fns"
-import ja from "date-fns/locale/ja"
-import CompactLogo from "../components/common/logo/Compact.vue"
+import ja from "date-fns/locale/ja/index.js"
 
 const router = useRouter()
 
@@ -71,7 +70,7 @@ const reverse = ref(false)
                                     return link.type == undefined && link.href !== undefined
                                 }).href
                             "
-                            target="_target"
+                            target="_blank"
                         >
                             <div p-2 px-4 w-full rounded cursor="pointer" hover="bg-gray-100 dark:bg-zinc-800">
                                 <div lg:flex gap-x-4 items-top>
