@@ -20,7 +20,8 @@ const canFocusout = ref(false)
         mt-4
         pb-6
         max-w="sm:lg md:xl lg:2xl"
-        min-w="sm sm:md md:lg lg:xl"
+        min-w="full md:md lg:lg xl:xl"
+        px="0 sm:12 md:0"
         @mouseenter="canFocusout = false"
         @mouseleave="canFocusout = true"
     >
@@ -31,7 +32,7 @@ const canFocusout = ref(false)
                     :rounded="focused ? 't-3xl' : 'full'"
                     :border="focused ? '1 transparent' : '1 gray-200 dark:stone-600'"
                     :shadow="focused ? 'md' : ''"
-                    :bg="focused ? 'dark:zinc-700' : 'dark:hover:slate-700'"
+                    :bg="focused ? 'dark:zinc-700' : 'dark:hover:zinc-700'"
                 >
                     <div class="flex items-center py-1 pl-5 w-full relative">
                         <div i-fe-search class="text-gray-400"></div>

@@ -1,7 +1,4 @@
 <script lang="ts" setup>
-import CompactLogo from "../components/common/logo/Compact.vue"
-import OGPLinkCard from "../components/ui/ogp/OGPLinkCard.vue"
-import SearchBox from "../components/common/search/Box.vue"
 import ResultList from "../components/page/search/ResultList.vue"
 
 const route = useRoute()
@@ -20,12 +17,6 @@ const { data: result } = await useFetch("/api/search", {
 
 <template>
     <div px="sm:8 md:10">
-        <CompactLogo />
-
-        <div ml="8">
-            <SearchBox :q="searchQuery" />
-        </div>
-
         <!-- TODO: 検索結果 -->
         <ClientOnly>
             <ResultList :result="result" />

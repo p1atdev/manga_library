@@ -3,19 +3,23 @@
 import LogoIcon from "../components/common/logo/Icon.vue"
 import LogoTitle from "../components/common/logo/Title.vue"
 import SearchBox from "../components/common/search/Box.vue"
+
+definePageMeta({
+    layout: false,
+})
 </script>
 
 <template>
-    <div>
-        <div mt="20">
-            <LogoIcon />
-            <LogoTitle my="2" />
-        </div>
+    <NuxtLayout name="index">
+        <div>
+            <div mt="20">
+                <LogoIcon />
+                <LogoTitle my="2" />
+            </div>
 
-        <div centerize>
-            <SearchBox />
+            <div centerize>
+                <SearchBox />
+            </div>
         </div>
-
-        <!-- <OGPLinkCard url="https://shonenjumpplus.com/episode/3269754496827246816" /> -->
-    </div>
+    </NuxtLayout>
 </template>

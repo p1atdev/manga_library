@@ -39,7 +39,7 @@ export class MajorManga {
                 return {
                     title: entry.title[0],
                     link: entry.link.map((link) => {
-                        return { href: link.$.href }
+                        return { href: link.$.href, type: link.$.type, rel: link.$.rel, length: link.$.length }
                     }),
                     id: entry.id[0],
                     updated: entry.updated[0],
