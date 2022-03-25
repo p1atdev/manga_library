@@ -1,19 +1,46 @@
 {
-  "name": "manga_library",
   "private": true,
-  "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
-    "preview": "vite preview"
+    "build": "nuxi build",
+    "dev": "nuxi dev",
+    "start": "node .output/server/index.mjs",
+    "lint": "eslint ."
   },
   "dependencies": {
-    "vue": "^3.2.25"
+    "@types/xml2js": "^0.4.9",
+    "@xmldom/xmldom": "^0.8.1",
+    "date-fns": "^2.28.0",
+    "fast-xml-parser": "^4.0.7",
+    "htmlparser2": "^7.2.0",
+    "jsdom": "^19.0.0",
+    "pinia": "^2.0.11",
+    "ufo": "^0.8.1",
+    "xml2js": "^0.4.23"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^2.2.0",
-    "typescript": "^4.5.4",
-    "vite": "^2.8.0",
-    "vue-tsc": "^0.29.8"
+    "@antfu/eslint-config": "^0.18.8",
+    "@iconify-json/bi": "^1.1.1",
+    "@iconify-json/bx": "^1.1.2",
+    "@iconify-json/carbon": "^1.1.1",
+    "@iconify-json/fe": "^1.1.1",
+    "@iconify-json/icomoon-free": "^1.1.1",
+    "@iconify-json/ph": "^1.1.1",
+    "@iconify-json/twemoji": "^1.1.1",
+    "@pinia/nuxt": "^0.1.8",
+    "@unocss/nuxt": "^0.27.6",
+    "@unocss/preset-attributify": "^0.30.1",
+    "@unocss/preset-uno": "^0.30.2",
+    "@unocss/preset-wind": "^0.30.2",
+    "@vueuse/nuxt": "^8.0.0",
+    "eslint": "^8.10.0",
+    "nuxt3": "3.0.0-27408580.aece351",
+    "rss-parser": "^3.12.0",
+    "typescript": "^4.6.2"
+  },
+  "pnpm": {
+    "overrides": {
+      "@nuxt/kit": "npm:@nuxt/kit-edge@latest",
+      "@nuxt/kit-edge": "latest"
+    }
   }
 }
