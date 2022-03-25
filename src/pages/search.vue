@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import CompactLogo from "../components/common/logo/Compact.vue"
 import OGPLinkCard from "../components/ui/ogp/OGPLinkCard.vue"
-import SearchBox from "../components/common/search/SearchBox.vue"
+import SearchBox from "../components/common/search/Box.vue"
 import ResultList from "../components/page/search/ResultList.vue"
 
 const route = useRoute()

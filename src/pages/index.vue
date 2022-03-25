@@ -2,7 +2,7 @@
 // import OGPLinkCard from "../components/ui/ogp/OGPLinkCard.vue"
 import LogoIcon from "../components/common/logo/Icon.vue"
 import LogoTitle from "../components/common/logo/Title.vue"
-import SearchBox from "../components/common/search/SearchBox.vue"
+import SearchBox from "../components/common/search/Box.vue"
 </script>
 
 <template>

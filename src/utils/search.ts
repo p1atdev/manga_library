@@ -15,14 +15,6 @@ export class SearchClient {
 
     constructor(q: string) {
         this.q = q
-        // this.domParser = new DOMParser({
-        //     errorHandler: {
-        //         warning: () => {},
-        //         error: () => {},
-        //         fatalError: () => {},
-        //     },
-        // })
-        // this.xmlParser = new xml2js.Parser()
         this.xmlParser = new XMLParser()
     }
 
@@ -39,10 +31,9 @@ export class SearchClient {
                     const resultItems = doc.querySelectorAll(`ul.${site.search_result_class} li`)
 
                     const mangaDatas = Array.from(resultItems.values()).map((item) => {
-                        // console.log("item:", item.innerHTML)
                         const manga = {} as Manga
                         try {
-                            manga.site_title = site.title
+                            manga.site = site
                             manga.title = (() => {
                                 const title = item.querySelector("div.title-box p[class='series-title']")
                                 return title ? title.innerHTML : ""

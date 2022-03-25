@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import SearchSuggestions from "./SearchSuggestions.vue"
+import SearchSuggestions from "./Suggestions.vue"
 type Props = {
     q?: string
 }
@@ -15,7 +15,7 @@ const canFocusout = ref(false)
         mt-4
         pb-6
         max-w="sm:lg md:xl lg:2xl"
-        min-w="80 sm:md md:lg lg:xl"
+        min-w="sm sm:md md:lg lg:xl"
         @mouseenter="canFocusout = false"
         @mouseleave="canFocusout = true"
     >
@@ -38,27 +38,20 @@ const canFocusout = ref(false)
                             v-model="q"
                             placeholder="タコピーの原罪"
                             autocomplete="off"
+                            tabindex="1"
                             @focusin="focused = true"
                             @focusout="focused = !canFocusout"
                         />
                     </div>
 
-                    <div
-                        @focusin="
-                            () => {
-                                focused = true
+                    <SearchSuggestions
+                        :show="focused"
+                        @suggest="
+                            (value) => {
+                                q = value
                             }
                         "
-                    >
-                        <SearchSuggestions
-                            :show="focused"
-                            @suggest="
-                                (value) => {
-                                    q = value
-                                }
-                            "
-                        />
-                    </div>
+                    />
                 </div>
             </form>
         </div>

@@ -1,13 +1,15 @@
-import { DOMParser } from "@xmldom/xmldom"
-
+import { JSDOM } from "jsdom"
 import { OGP } from "../types/ogp"
 
 export class OGPParser {
     parse(html: string): OGP {
-        const parser = new DOMParser()
-        const doc = parser.parseFromString(html, "text/html")
+        const doc = new JSDOM(html).window.document
 
-        const metaTags = doc.getElementsByTagName("meta")
+        console.log(doc.body.innerHTML)
+
+        const metaTags = doc.querySelectorAll("meta")
+
+        console.log("metaTags:", metaTags.length)
 
         const ogp: OGP = {
             title: "",
@@ -17,6 +19,7 @@ export class OGPParser {
         }
 
         for (const meta of Array.from(metaTags)) {
+            console.log("hi")
             const property = meta.getAttribute("property")
             const content = meta.getAttribute("content")
 
