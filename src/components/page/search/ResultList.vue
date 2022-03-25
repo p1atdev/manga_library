@@ -11,7 +11,7 @@ const { result } = defineProps<Props>()
 
 <template>
     <div lg="grid grid-cols-2">
-        <div v-for="manga of result">
+        <div v-for="manga of result" :key="manga.title">
             <ResultListRow :manga="manga" />
         </div>
     </div>

@@ -23,28 +23,27 @@ const { data: suggestions } = await useFetch("/api/suggestions")
                 <button
                     appearance-none
                     w-full
+                    type="button"
                     @click="
                         () => {
                             $emit('suggest', suggestion.content)
                         }
                     "
-                    type="button"
                 >
                     <div class="hover:bg-gray-100 hover:dark:bg-zinc-800">
                         <div flex px-11>
                             <p align="left" py-3 w-full userselect-none cursor="pointer">{{ suggestion.content }}</p>
-                            <button
+                            <!-- <button
                                 py-2
                                 @click="
                                     (event) => {
-                                        event.preventDefault()
                                         $emit('suggest', suggestion.content)
                                     }
                                 "
                                 type="button"
                             >
                                 <div i-ph-arrow-up-left />
-                            </button>
+                            </button> -->
                         </div>
                     </div>
                 </button>

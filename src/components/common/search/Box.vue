@@ -1,10 +1,15 @@
 <script lang="ts" setup>
+import { useFocus } from "@vueuse/core"
+
 import SearchSuggestions from "./Suggestions.vue"
+
 type Props = {
     q?: string
 }
 
 const { q } = defineProps<Props>()
+
+const target = ref()
 
 const focused = ref(false)
 const canFocusout = ref(false)
@@ -38,7 +43,8 @@ const canFocusout = ref(false)
                             v-model="q"
                             placeholder="タコピーの原罪"
                             autocomplete="off"
-                            tabindex="1"
+                            tabindex="0"
+                            ref="target"
                             @focusin="focused = true"
                             @focusout="focused = !canFocusout"
                         />
@@ -49,6 +55,7 @@ const canFocusout = ref(false)
                         @suggest="
                             (value) => {
                                 q = value
+                                target.focus()
                             }
                         "
                     />
