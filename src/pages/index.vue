@@ -5,7 +5,7 @@ import LogoTitle from "../components/common/logo/Title.vue"
 import SearchBox from "../components/common/search/Box.vue"
 import Feeds from "../components/page/index/Feeds.vue"
 import { format } from "date-fns"
-import ja from "date-fns/locale/ja"
+import ja from "date-fns/locale/ja/index.js"
 
 // TODO: 本日更新のフィードを取得
 
