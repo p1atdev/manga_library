@@ -4,6 +4,7 @@ import LogoIcon from "../components/common/logo/Icon.vue"
 import LogoTitle from "../components/common/logo/Title.vue"
 import SearchBox from "../components/common/search/Box.vue"
 import Feeds from "../components/page/index/Feeds.vue"
+import SkeltonGrid from "../components/common/feed/SkeltonGrid.vue"
 import { format } from "date-fns"
 import ja from "date-fns/locale/ja/index.js"
 
@@ -37,7 +38,12 @@ definePageMeta({
                 <div p-4 text-4xl font-semibold>
                     🔥本日更新🔥<span px-2 text-3xl>({{ weekDay }})</span>
                 </div>
-                <Feeds :feeds="feeds" />
+                <ClientOnly>
+                    <Feeds :feeds="feeds" />
+                    <template #fallback>
+                        <SkeltonGrid />
+                    </template>
+                </ClientOnly>
             </div>
         </div>
     </NuxtLayout>

@@ -1,10 +1,15 @@
-import fs from "fs"
-import { resolvePath } from "@nuxt/kit"
+// import fs from "fs"
+// import { resolvePath } from "@nuxt/kit"
 
 export const supportedSites = async () => {
-    const sites = fs.readFileSync(await resolvePath("src/public/assets/sites.json"), "utf-8")
+    const url = process.server ? "http://localhost:3000" : window.location.origin
 
-    const json = JSON.parse(sites)
+    // const sites = fs.readFileSync(await resolvePath(`public/assets/sites.json`), "utf-8")
+    // const
+
+    // const json = JSON.parse(sites)
+
+    const json = await fetch(url + "/assets/sites.json").then((res) => res.json())
 
     return json
 }

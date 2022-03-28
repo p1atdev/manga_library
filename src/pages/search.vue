@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import ResultList from "../components/page/search/ResultList.vue"
+import SkeltonGrid from "../components/common/feed/SkeltonGrid.vue"
 
 const route = useRoute()
 
@@ -22,12 +23,13 @@ const { data: result } = await useFetch("/api/search", {
             <ResultList :result="result" />
             <template #fallback>
                 <!-- ローディング -->
-                <div centerize py-8>
+                <!-- <div centerize py-8>
                     <div flex items-center text-3xl>
                         <div i-eos-icons-loading />
                         <p>読み込み中...</p>
                     </div>
-                </div>
+                </div> -->
+                <SkeltonGrid />
             </template>
         </ClientOnly>
     </div>
