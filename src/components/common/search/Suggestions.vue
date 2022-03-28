@@ -8,6 +8,8 @@ const { show } = defineProps<Props>()
 
 const { data: suggestions } = await useFetch("/api/suggestions")
 
+const router = useRouter()
+
 // console.log(suggestions.value)
 </script>
 
@@ -27,6 +29,12 @@ const { data: suggestions } = await useFetch("/api/suggestions")
                     @click="
                         () => {
                             $emit('suggest', suggestion.content)
+                            router.push({
+                                path: '/search',
+                                query: {
+                                    q: suggestion.content,
+                                },
+                            })
                         }
                     "
                 >

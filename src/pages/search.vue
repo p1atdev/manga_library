@@ -5,7 +5,7 @@ const route = useRoute()
 
 const searchQuery = route.query.q as string
 
-// TODO: 検索する
+// 検索する
 const { data: result } = await useFetch("/api/search", {
     params: {
         q: searchQuery,
@@ -20,6 +20,15 @@ const { data: result } = await useFetch("/api/search", {
         <!-- TODO: 検索結果 -->
         <ClientOnly>
             <ResultList :result="result" />
+            <template #fallback>
+                <!-- ローディング -->
+                <div centerize py-8>
+                    <div flex items-center text-3xl>
+                        <div i-eos-icons-loading />
+                        <p>読み込み中...</p>
+                    </div>
+                </div>
+            </template>
         </ClientOnly>
     </div>
 </template>
