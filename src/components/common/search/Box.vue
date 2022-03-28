@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-import { useFocus } from "@vueuse/core"
-
 import SearchSuggestions from "./Suggestions.vue"
 
 type Props = {
