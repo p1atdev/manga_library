@@ -44,6 +44,7 @@ const mangaUrl = ref(`/manga?url=${feed.mangaUrl}`)
                                     <div i-bx-detail />
                                     <div>詳細</div>
                                 </div>
+                                <div w-full />
                             </a>
                         </NuxtLink>
                     </div>
@@ -54,7 +55,7 @@ const mangaUrl = ref(`/manga?url=${feed.mangaUrl}`)
                         :href="feed.mangaUrl"
                         target="_blank"
                     >
-                        <div animate="pulse">最新話</div>
+                        <div>最新話</div>
                     </a>
                     <div v-else class="p-2 px-4 bg-slate-200 dark:bg-slate-700 rounded opacity-50 cursor-default">
                         <div>最新話</div>

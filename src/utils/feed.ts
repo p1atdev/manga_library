@@ -61,7 +61,7 @@ export class FeedClient {
             })
         })
 
-        console.log(feeds.length)
+        // console.log(feeds.length)
 
         return count ? feeds.slice(0, count) : feeds
     }
