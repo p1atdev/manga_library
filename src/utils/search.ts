@@ -1,9 +1,6 @@
 import { Manga } from "../types/manga"
 import { Site } from "../types/site"
 import { supportedSites } from "./config"
-// import { DOMParser } from "@xmldom/xmldom"
-// import xml2js from "xml2js"
-// import htmlparser2 from "htmlparser2"
 import { XMLParser } from "fast-xml-parser"
 import { JSDOM } from "jsdom"
 

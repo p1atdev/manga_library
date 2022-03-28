@@ -1,10 +1,9 @@
-import fs from "fs"
-import { resolvePath } from "@nuxt/kit"
+import config from "#config"
 
 export const supportedSites = async () => {
-    const sites = fs.readFileSync(await resolvePath("src/assets/sites.json"), "utf-8")
+    const url = config.VERCEL_ENV ? "https://" + config.VERCEL_URL ?? window.location.origin : "http://localhost:3000"
 
-    const json = JSON.parse(sites)
+    const json = await fetch(url + "/assets/sites.json").then((res) => res.json())
 
     return json
 }

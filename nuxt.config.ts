@@ -4,6 +4,10 @@ export default defineNuxtConfig({
     publicRuntimeConfig: {
         SITE_TITLE: "漫画図書館",
     },
+    privateRuntimeConfig: {
+        VERCEL_ENV: process.env.VERCEL_ENV,
+        VERCEL_URL: process.env.VERCEL_URL,
+    },
     meta: {
         title: "漫画図書館",
     },

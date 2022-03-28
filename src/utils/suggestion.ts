@@ -20,7 +20,7 @@ export class RSSParser {
     }
 }
 
-export class RSSClient {
+export class SuggestionClient {
     parser: RSSParser
 
     constructor() {

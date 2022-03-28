@@ -8,10 +8,10 @@ export interface RSS {
 export interface RSSItem {
     title: string
     link: string
-    pubDate: Date
+    pubDate: string
     author: string
     content: string
     contentSnippet: string
     id: string
-    isoDate: Date
+    isoDate: string
 }
