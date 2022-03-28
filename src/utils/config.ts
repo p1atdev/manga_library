@@ -1,7 +1,7 @@
-export const supportedSites = async () => {
-    const config = useRuntimeConfig()
+import config from "#config"
 
-    const url = config.VERCEL_ENV ? "http://localhost:3000" : config.VERCEL_URL ?? window.location.origin
+export const supportedSites = async () => {
+    const url = config.VERCEL_ENV ? config.VERCEL_URL ?? window.location.origin : "http://localhost:3000"
 
     const json = await fetch(url + "/assets/sites.json").then((res) => res.json())
 
