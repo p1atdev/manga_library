@@ -26,14 +26,8 @@ const reverse = ref(false)
     <div px="sm:8 md:10">
         <div px="8" py="4" md="flex gap-x-10 " lg="gap-x-20">
             <aside
-                sticky
-                h-screen
-                top-0
-                pb-40
-                overflow-y-scroll
-                overscroll-contain
+                md="max-w-xs sticky h-screen top-0 pb-40 overflow-y-scroll overscroll-contain"
                 class="grid place-items-center md:place-items-start no-scrollbar"
-                md="max-w-xs"
             >
                 <div max-w="sm md:max">
                     <p py-2 text-xl text-semibold opacity-75>{{ meta.site.title }}</p>
