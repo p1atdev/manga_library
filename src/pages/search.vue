@@ -20,15 +20,14 @@ const { data: result } = await useFetch("/api/search", {
     <div px="sm:8 md:10">
         <!-- TODO: 検索結果 -->
         <ClientOnly>
-            <ResultList :result="result" />
+            <div v-if="result">
+                <ResultList :result="result" />
+            </div>
+            <div v-else>
+                <SkeltonGrid />
+            </div>
+
             <template #fallback>
-                <!-- ローディング -->
-                <!-- <div centerize py-8>
-                    <div flex items-center text-3xl>
-                        <div i-eos-icons-loading />
-                        <p>読み込み中...</p>
-                    </div>
-                </div> -->
                 <SkeltonGrid />
             </template>
         </ClientOnly>
