@@ -15,65 +15,67 @@ export default defineNuxtConfig({
         VERCEL_ENV: process.env.VERCEL_ENV,
         VERCEL_URL: process.env.VERCEL_URL,
     },
-    meta: [
-        {
-            name: "title",
-            content: siteName,
-        },
-        {
-            name: "description",
-            content: description,
-        },
-        {
-            name: "keywords",
-            content: keywords,
-        },
-        {
-            property: "og:title",
-            content: siteName,
-        },
-        {
-            property: "og:description",
-            content: description,
-        },
-        {
-            property: "og:type",
-            content: "website",
-        },
-        {
-            property: "og:url",
-            content: "https://mangalib.vercel.app/",
-        },
-        {
-            property: "og:image",
-            content: ogImage,
-        },
-        {
-            property: "og:site_name",
-            content: siteName,
-        },
-        {
-            name: "twitter:card",
-            content: "summary_large_image",
-        },
-        // {
-        //     name: "twitter:site",
-        //     content: "@",
-        // },
-        {
-            name: "twitter:title",
-            content: siteName,
-        },
-        {
-            name: "twitter:description",
-            content: description,
-        },
-        {
-            name: "twitter:image",
-            content: ogImage,
-        },
-    ],
-
+    meta: {
+        title: siteName,
+        meta: [
+            {
+                name: "title",
+                content: siteName,
+            },
+            {
+                name: "description",
+                content: description,
+            },
+            {
+                name: "keywords",
+                content: keywords,
+            },
+            {
+                property: "og:title",
+                content: siteName,
+            },
+            {
+                property: "og:description",
+                content: description,
+            },
+            {
+                property: "og:type",
+                content: "website",
+            },
+            {
+                property: "og:url",
+                content: "https://mangalib.vercel.app/",
+            },
+            {
+                property: "og:image",
+                content: ogImage,
+            },
+            {
+                property: "og:site_name",
+                content: siteName,
+            },
+            {
+                name: "twitter:card",
+                content: "summary_large_image",
+            },
+            // {
+            //     name: "twitter:site",
+            //     content: "@",
+            // },
+            {
+                name: "twitter:title",
+                content: siteName,
+            },
+            {
+                name: "twitter:description",
+                content: description,
+            },
+            {
+                name: "twitter:image",
+                content: ogImage,
+            },
+        ],
+    },
     buildModules: ["@vueuse/nuxt", "@unocss/nuxt", "@pinia/nuxt"],
     vueuse: {
         ssrHandlers: true,
